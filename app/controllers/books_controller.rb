@@ -46,6 +46,15 @@ class BooksController < ApplicationController
       end
     end
   end
+  #def update
+    #{}@book = Book.find(params[:id])
+  
+    #{}if @book.update(book_params)
+      #{}redirect_to book_url(@book), notice: "Book was successfully updated."
+    #{}else
+      #{}render :edit, status: :unprocessable_entity
+    #{}end
+  #{}end
 
   # DELETE /books/1 or /books/1.json
   def destroy
