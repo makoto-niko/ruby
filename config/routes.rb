@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'acceptances/new'
-  get 'acceptances/create'
-  root to: "books#index"
+  root to: "acceptances#new"
+  resources :acceptances, only: [:create]
   resources :books
 end

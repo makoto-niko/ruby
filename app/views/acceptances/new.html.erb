@@ -1,2 +1,23 @@
-<h1>Acceptances#new</h1>
-<p>Find me in app/views/acceptances/new.html.erb</p>
+<h1>規約承諾</h1>
+<p>本規約に同意する場合は、yesを入力して承諾ボタンをクリックしてください。</p>
+<% form_with(model: @acceptance, local: true) do |form| %>
+<% if @acceptance.eroors.any? %>
+ <div id = "error_expianation">
+    <h2><% plurallize(@acceptance.error.count, "error")  %> prohibited this acceptance from being saved: </h2>
+    <ul>
+     <% @acceptance.errors.full_messages.each do |message|%>
+     <li><%= message %> </li>
+     <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class = "filed">
+    <% form label :acceptance %>
+    <% form.text_filed :accepting, id :acceptance_accepting %>
+ </div> 
+
+ <div class = "actions">
+    <% from_submit "承諾" %>
+</div> 
+<% end %> 
